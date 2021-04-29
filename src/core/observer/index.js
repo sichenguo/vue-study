@@ -132,6 +132,7 @@ export function observe (value: any, asRootData: ?boolean): Observer | void {
 /**
  * Define a reactive property on an Object.
  */
+// g:note vue响应式原理
 export function defineReactive (
   obj: Object,
   key: string,

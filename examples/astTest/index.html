@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      #demo {
+        font-family: "Helvetica", Arial, sans-serif;
+      }
+    </style>
+    <script src="../../dist/vue.js"></script>
+  </head>
+  <body>
+    <div id="demo">
+      <h1 v-if="isShow">我是标题</h1>
+      <p>我是内容1</p>
+      <!-- 测试静态根节点 -->
+      <p>
+        <span>我是纯文本2</span>
+      </p>
+    </div>
+    <script src="app.js"></script>
+  </body>
+</html>
