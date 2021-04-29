@@ -39,7 +39,7 @@ export type CodegenResult = {
   render: string,
   staticRenderFns: Array<string>
 };
-
+// g:note 渲染函数生成
 export function generate (
   ast: ASTElement | void,
   options: CompilerOptions
@@ -52,6 +52,7 @@ export function generate (
   }
 }
 
+// g:note 生成元素节点
 export function genElement (el: ASTElement, state: CodegenState): string {
   if (el.parent) {
     el.pre = el.pre || el.parent.pre
@@ -215,7 +216,7 @@ export function genFor (
       `return ${(altGen || genElement)(el, state)}` +
     '})'
 }
-
+// g:note 解析属性值
 export function genData (el: ASTElement, state: CodegenState): string {
   let data = '{'
 
@@ -521,7 +522,7 @@ function getNormalizationType (
 function needsNormalization (el: ASTElement): boolean {
   return el.for !== undefined || el.tag === 'template' || el.tag === 'slot'
 }
-
+// g:note 生成node
 function genNode (node: ASTNode, state: CodegenState): string {
   if (node.type === 1) {
     return genElement(node, state)

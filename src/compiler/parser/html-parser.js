@@ -208,7 +208,7 @@ export function parseHTML (html, options) {
       }
     }
   }
-
+// g:note start钩子
   function handleStartTag (match) {
     const tagName = match.tagName
     const unarySlash = match.unarySlash
@@ -251,7 +251,7 @@ export function parseHTML (html, options) {
       options.start(tagName, attrs, unary, match.start, match.end)
     }
   }
-
+  // g:note 使用栈判断标签语法的合法性
   function parseEndTag (tagName, start, end) {
     let pos, lowerCasedTagName
     if (start == null) start = index
@@ -271,6 +271,7 @@ export function parseHTML (html, options) {
     }
 
     if (pos >= 0) {
+      // pos 是 当前标签在栈中的位置
       // Close all the open elements, up the stack
       for (let i = stack.length - 1; i >= pos; i--) {
         if (process.env.NODE_ENV !== 'production' &&

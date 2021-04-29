@@ -13,10 +13,14 @@ export const createCompiler = createCompilerCreator(function baseCompile (
   options: CompilerOptions
 ): CompiledResult {
   const ast = parse(template.trim(), options)
+  console.log('ast----------------\n',ast)
   if (options.optimize !== false) {
     optimize(ast, options)
+    console.log('optimize-ast----------------\n',ast)
   }
   const code = generate(ast, options)
+  console.log('code.staticRenderFns----------------\n',code.staticRenderFns)
+  console.log('code.render----------------\n',code.render)
   return {
     ast,
     render: code.render,

@@ -87,7 +87,7 @@ export function createCompileToFunctionFn (compile: Function): Function {
       }
     }
 
-    // turn code into functions
+    // g:note turn code into functions 
     const res = {}
     const fnGenErrors = []
     res.render = createFunction(compiled.render, fnGenErrors)

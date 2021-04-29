@@ -3980,7 +3980,7 @@
     // second pass: mark static roots.
     markStaticRoots(root, false);
   }
-
+// g:note 静态节点key的范围
   function genStaticKeys$1 (keys) {
     return makeMap(
       'type,tag,attrsList,attrsMap,plain,parent,children,attrs,start,end,rawAttrsMap' +
@@ -4288,7 +4288,7 @@
   };
 
 
-
+// g:note ast转为函数字符串
   function generate (
     ast,
     options
@@ -4300,7 +4300,7 @@
       staticRenderFns: state.staticRenderFns
     }
   }
-
+// g:note 渲染函数
   function genElement (el, state) {
     if (el.parent) {
       el.pre = el.pre || el.parent.pre;
@@ -5008,7 +5008,7 @@
       return noop
     }
   }
-
+// g:note code 转化为渲染函数
   function createCompileToFunctionFn (compile) {
     var cache = Object.create(null);
 

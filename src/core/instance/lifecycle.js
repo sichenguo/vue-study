@@ -176,6 +176,7 @@ export function mountComponent (
       const endTag = `vue-perf-end:${id}`
 
       mark(startTag)
+      // g:note 组件更新生成vnode
       const vnode = vm._render()
       mark(endTag)
       measure(`vue ${name} render`, startTag, endTag)
@@ -187,6 +188,7 @@ export function mountComponent (
     }
   } else {
     updateComponent = () => {
+      debugger
       vm._update(vm._render(), hydrating)
     }
   }

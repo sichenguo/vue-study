@@ -96,7 +96,7 @@ function markStaticRoots (node: ASTNode, isInFor: boolean) {
     }
   }
 }
-
+// g:note 判定是否为静态节点
 function isStatic (node: ASTNode): boolean {
   if (node.type === 2) { // expression
     return false

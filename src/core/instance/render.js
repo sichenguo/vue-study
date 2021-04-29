@@ -65,7 +65,7 @@ export function renderMixin (Vue: Class<Component>) {
   Vue.prototype.$nextTick = function (fn: Function) {
     return nextTick(fn, this)
   }
-
+// g:note _render是挂载到实例方法上的
   Vue.prototype._render = function (): VNode {
     const vm: Component = this
     const { render, _parentVnode } = vm.$options

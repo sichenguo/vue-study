@@ -210,6 +210,7 @@ export function parse (
     shouldKeepComment: options.comments,
     outputSourceRange: options.outputSourceRange,
     start (tag, attrs, unary, start, end) {
+      console.log('tag, attrs, unary, start, end',tag, attrs, unary, start, end)
       // check namespace.
       // inherit parent ns if there is one
       const ns = (currentParent && currentParent.ns) || platformGetTagNamespace(tag)
@@ -287,13 +288,14 @@ export function parse (
           checkRootConstraints(root)
         }
       }
-
+    // g:note treeMangement 使用栈维护DOM层级
       if (!unary) {
         currentParent = element
-        stack.push(element)
+        stack.push(element) 
       } else {
         closeElement(element)
       }
+      
     },
 
     end (tag, start, end) {
@@ -396,6 +398,7 @@ export function parse (
       }
     }
   })
+  console.log('root:\n',root)
   return root
 }
 
